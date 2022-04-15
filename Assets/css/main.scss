@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+// Color Pallete
+$background-color-dark: #121212;
+$primary-color: #ff9900;
+$grey-color: #545454;
+$light-grey: #3a3a3a;
+$success: #09a849;
+$danger: #ff2e2e;
+
+// Root declarations
+* {
+  font-family: "Roboto", sans-serif;
+}
+body {
+  background: $background-color-dark !important;
+}
+.logo-heading {
+  color: $primary-color !important;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 34px;
+}
+.color-orange {
+  color: $primary-color !important;
+  font-size: 12px;
+}
+
+.text-dim {
+  color: $light-grey !important;
+  font-weight: bold;
+}
+.version {
+  color: $primary-color !important;
+  font-size: 10px;
+  font-weight: bold;
+  opacity: 73%;
+}
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $grey-color !important;
+  color: $primary-color !important;
+  border-radius: 10px !important;
+  box-shadow: 4px 4px 4px 0 #000;
+  &:hover {
+    box-shadow: none;
+  }
+  svg {
+    stroke: white !important;
+    position: relative;
+    top: 10px;
+  }
+}
+.username {
+  color: $primary-color !important;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  position: relative;
+  top: 25px;
+}
+.orange {
+  color: $primary-color !important;
+}
+.backbtn {
+  padding: 15px;
+  &:hover {
+    color: white !important;
+    padding-left: 5px;
+    transition: padding 0.5s ease;
+  }
+  a {
+    color: $primary-color !important;
+    &:hover {
+      color: white;
+      padding-left: 5px;
+      transition: padding 0.5s ease;
+    }
+  }
+  svg {
+    stroke: 2 !important;
+    height: 35px;
+  }
+}
+.user-right {
+  padding: 15px;
+  margin-top: 5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 18px;
+}
+.hw-88 {
+  height: 89px;
+  width: 89px;
+}
+.f-15 {
+  font-size: 15px;
+}
+.heading {
+  font-size: 18px;
+  position: relative;
+  top: 2px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.paidby {
+  padding: 5px 0;
+  background-color: $grey-color !important;
+  p {
+    letter-spacing: 1px;
+    font-weight: bold;
+  }
+}
+input {
+  border: 2px solid $grey-color !important;
+  border-radius: 5px !important;
+  padding: 0 5px;
+  text-align: center;
+  font-weight: bold;
+  margin: 3px 3px !important;
+  &:focus {
+    border: none !important;
+    border: 2px solid $primary-color !important;
+    box-shadow: none;
+    outline: none;
+  }
+}
+.btn {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+.btn-outline-primary {
+  border: 2px solid $primary-color !important;
+  color: $primary-color !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $primary-color !important;
+    color: white !important;
+  }
+}
+.btn-submit {
+  border: 2px solid $primary-color !important;
+  background-color: $primary-color !important;
+  color: $background-color-dark !important;
+  font-weight: bold !important;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 18px !important;
+  width: 142px !important;
+  height: 45px !important;
+  border-radius: 10px 0 0 0 !important;
+  position: fixed;
+  bottom: 0 !important;
+  right: 0 !important;
+  &:hover {
+    border: 2px solid white !important;
+    background: #000 !important;
+    color: white !important;
+  }
+}
+/* The snackbar - position it at the bottom and in the middle of the screen */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: $primary-color !important; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 10px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+.bill-cards {
+  background-color: $grey-color !important;
+  border-radius: 10px;
+  box-shadow: 4px 4px 4px #000000;
+  padding: 20px;
+  p {
+    letter-spacing: 1px !important;
+    font-size: 15px !important;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  small {
+    font-size: 10px !important;
+  }
+  h4 {
+    color: $primary-color !important;
+    font-size: 30px;
+    letter-spacing: 1px;
+  }
+  .mark-btn {
+    background-color: $danger !important;
+    height: 40px;
+    width: 40px;
+    border: 5px solid $background-color-dark;
+    border-radius: 100%;
+    float: right !important; 
+    box-shadow: 0px 5px 5px #00000025;
+    &:hover{
+        box-shadow: none;
+    }
+  }
+}
+.text-success{
+    color: $success !important;
+}
+.text-danger{
+    color: $danger !important;
+}
+.bg-danger{
+    background: $danger !important;
+}
+.bg-success{
+    background: $success !important;
+}
